@@ -1,0 +1,89 @@
+patient 
+
+id 
+firstName
+lastName
+email 
+address
+phone
+birthday
+@OneToMany
+appointment
+@OneToOne
+user
+ 
+doctor 
+
+id 
+firstName
+lastName
+email
+phone 
+@OneToOne
+appointment
+@OneToOne
+user
+
+user 
+
+id 
+username
+password
+ @Enumerated 
+role 
+
+
+role interface 
+USER,PATIENT, DOCTOR 
+
+message
+
+id 
+content
+LocalDateTime sentAt;
+@ManyToOne 
+user sender
+@ManyToOne
+user receiver
+
+appointment
+
+id 
+LocalDateTime  appointmentDataTime
+status
+@OneToOne
+doctor
+@ManyToOne
+patient
+
+Schedule
+
+id 
+@ManyToOne 
+doctor 
+startTime
+endTime
+boolean isAvailable
+
+pacientet dhe doktorrat rregjstrohen vet ,DONE 
+klienti ti mar pergjigjet e analizave online ,
+te shikoj historikun e vet,
+te ket mundesi te lere nje orar te x doktorr , dhe te shikoj oraret e lira te nje doktorri ,
+te ket mundesin te shkruaj nje sms doc (ose te ket mundesin te flas me nje tobi),
+kur anullohet nje takim ti vij nje email , dhe kur le orarin ti vij nje email konfigurimi 
+
+
+
+
+Menaxhimi i Takimeve: Implemento funksionalitetet për rezervimin dhe menaxhimin e takimeve. Kjo përfshin:
+
+Krijimin e endpoint-eve për të rezervuar takime.
+Kontrollimin e disponueshmërisë së doktorëve për orare të caktuara.
+Ruajtjen e takimeve në bazën e të dhënave dhe përditësimin e statusit të takimeve.
+Sistemi i Njoftimeve: Krijo një mekanizëm për të dërguar njoftime për pacientët dhe doktorët për takime të caktuara, anulime, ose ndryshime të rëndësishme.
+
+Historiku Mjekësor: Implemento funksionalitetin që lejon pacientët të shohin dhe menaxhojnë historinë e tyre mjekësore. Ky mund të përfshijë vizitat e kaluara, diagnozat, dhe trajtimet e marra.
+
+Autentifikimi dhe Autorizimi: Sigurohu që përdoruesit të mund të regjistrohen dhe të identifikohen në mënyrë të sigurt. Mund të përdorësh JWT për të menaxhuar sesionet e përdoruesve dhe për të kontrolluar qasjen në funksionalitete të ndryshme.
+
+Testimi i Aplikacionit: Testo funksionalitetet e reja dhe sigurohu që gjithçka funksionon siç është e parashikuar. Mund të përdorësh një grup testesh për të verifikuar që aplikacioni është i stabilizuar dhe i gatshëm për përdorim.

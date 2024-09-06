@@ -5,13 +5,13 @@ import com.example.hospitalMenagment.model.Appointment;
 import com.example.hospitalMenagment.model.Doctor;
 import com.example.hospitalMenagment.repository.AppointmentRepository;
 import com.example.hospitalMenagment.repository.DoctorRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+@EnableScheduling
 @Service
 public class DailyReportService {
 
@@ -54,4 +54,6 @@ public class DailyReportService {
             }
         }
     }
+
+
 }

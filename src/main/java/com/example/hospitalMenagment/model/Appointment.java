@@ -17,6 +17,8 @@ public class Appointment {
     private Long id;
     private LocalDateTime  appointmentDataTime;
     private String status;
+    private String notes;
+
     @OneToOne
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
@@ -28,10 +30,11 @@ public class Appointment {
 
     }
 
-    public Appointment(Long id, LocalDateTime appointmentDataTime, String status, Doctor doctor, Patient patient) {
+    public Appointment(Long id, LocalDateTime appointmentDataTime, String status, String notes, Doctor doctor, Patient patient) {
         this.id = id;
         this.appointmentDataTime = appointmentDataTime;
         this.status = status;
+        this.notes = notes;
         this.doctor = doctor;
         this.patient = patient;
     }

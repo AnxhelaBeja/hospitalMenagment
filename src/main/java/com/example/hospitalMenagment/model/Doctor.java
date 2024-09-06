@@ -25,6 +25,8 @@ public class Doctor {
 
     @Enumerated(EnumType.STRING)
     private DoctorProfile doctorProfile;
+    @Column(nullable = false)
+    private boolean active= true;
 
     public Doctor() {
     }
@@ -111,5 +113,12 @@ public class Doctor {
 
     public void setDoctorProfile(DoctorProfile doctorProfile) {
         this.doctorProfile = doctorProfile;
+    }
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
